@@ -1,0 +1,224 @@
+﻿<Window x:Class="WPFPresentation.GameView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFPresentation"
+        mc:Ignorable="d"
+        Title="ChessBuddy - Game View" MinHeight="1000" MinWidth="900" Height="1000" Width="900" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
+    <Window.Resources>
+        <Style x:Key="PieceStyle" TargetType="Image">
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Pawn"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/pawn_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Pawn"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/pawn_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Knight"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/knight_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Knight"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/knight_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Bishop"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/bishop_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Bishop"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/bishop_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Rook"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/rook_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Rook"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/rook_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Queen"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/queen_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="Queen"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/queen_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="King"/>
+                        <Condition Binding="{Binding Color}" Value="White"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/king_white.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Type}" Value="King"/>
+                        <Condition Binding="{Binding Color}" Value="Black"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter Property="Image.Source" Value="Resources/king_black.png"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="800"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblPlayerWhite" Margin="50 0 50 0"
+                   HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <Label Grid.Row="1" Grid.Column="0" x:Name="lblEloWhite" Margin="50 0 50 0"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <Label Grid.Row="0" Grid.Column="1" x:Name="lblECO"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="lblOpening"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+            <Label Grid.Row="0" Grid.Column="2" x:Name="lblPlayerBlack" Margin="50 0 50 0"
+                   HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Label Grid.Row="1" Grid.Column="2" x:Name="lblEloBlack" Margin="50 0 50 0"
+                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
+        <ItemsControl x:Name="ctrlBoard" Height="800" Width="800" 
+                              HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                              Grid.Row="1" Grid.Column="0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Resources/board.png" Stretch="UniformToFill"/>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Image Width="95" Height="95" Style="{StaticResource PieceStyle}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Grid.Column" Value="{Binding Position.X}"/>
+                    <Setter Property="Grid.Row" Value="{Binding Position.Y}"/>
+                    <Style.Triggers>
+                        <!-- mouse-over tooltip shows piece type -->
+                        <Trigger Property="ItemsControl.IsMouseOver" Value="True">
+                            <Setter Property="ItemsControl.ToolTip" Value="{Binding Type}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+        </ItemsControl>
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnResetBoard" Grid.Column="0" Content="Reset" Height="50" Width="60" Margin="50 0 0 0"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnResetBoard_Click"/>
+            <Button x:Name="btnFavoriteGame" Grid.Column="0" Content="Add to Favorites" Height="50" Width="130" Margin="120 0 0 0"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnFavoriteGame_Click"/>
+            <Button x:Name="btnPrevMove" Grid.Column="0" Height="50" Width="60" Content="&lt;&lt;"
+                                         VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0" Click="btnPrevMove_Click"/>
+            <Button x:Name="btnNextMove" Grid.Column="1" Height="50" Width="60" Content=">>"
+                                         VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30 0 0 0" Click="btnNextMove_Click"/>
+            <Button x:Name="btnFlipBoard" Grid.Column="1" Content="Flip" Height="50" Width="60" Margin="0 0 50 0"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnFlipBoard_Click"/>
+        </Grid>
+    </Grid>
+</Window>

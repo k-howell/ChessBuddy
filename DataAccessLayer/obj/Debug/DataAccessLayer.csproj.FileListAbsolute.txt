@@ -1,0 +1,11 @@
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy\DataAccessLayer\bin\Debug\DataObjects.pdb

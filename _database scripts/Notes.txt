@@ -1,0 +1,59 @@
+ChessBuddy
+ChessBuddy is a chess database and practice tool focused on helping a chess player 
+to more easily analyze real chess games and to train to help them memorize the common strategies
+at the beginning of a game. The focus is to create a tool to interact with the game directly in 
+a controlled environment, moving the pieces yourself in positions you'd like to get more 
+experience in.
+
+
+Similar service:
+https://www.365chess.com/opening_training.php?pcolor=0&master=0&smeco=0&topening=0
+
+MVP:
+	Browse chess openings/variations
+	Play through moves of openings from either color
+	Read descriptions of many common openings
+
+Desirable Features:
+	Small writeup of chess notation
+	Undo move button
+	Accept card details form for premium account
+	Premium account add custom lines
+
+Stretch Goals:
+	identify openings of random positions puzzles
+	Board position naming drills
+	mate puzzles queried from real game positions
+	puzzles from puzzle db dump at https://database.lichess.org/#puzzles
+	Endgame
+
+
+
+Main Menu:
+Login
+	Free
+	Premium
+	Admin
+Browse Database
+Select an opening/color to practice
+	Separate openings by first move "e4-    d4-   " etc.
+Select mate/identify puzzles
+
+CONSIDER removing move table in favor of position table
+	do individual moves (piece origin destination) need persistence?
+		when reviewing a game, moves are inferred when looking at positions
+	able to use FEN strings to describe position
+		FEN also describes:
+			castleing
+			en passant available squares
+			whole turn number
+			active turn player
+		example starting position
+			          (1)		           (2) (3)(4)5(6)
+		rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+		(1) pieces, rank8/rank7/rank6 etc. blackpieces WHITEPIECES 8(blank squares)
+		(2) active turn player
+		(3) kingside/queenside castling availability for each player
+		(4) en passant target square: position a pawn could move into to capture. "-" if NA
+		(5) halfmove clock: num halfmoves since last capture or pawn advance, for fifty-move rule
+		(6) fullmove num: number of full moves (both players). starts at 1, increments after black move
