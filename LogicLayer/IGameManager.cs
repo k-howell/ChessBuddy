@@ -15,5 +15,6 @@ namespace LogicLayer
         List<Move> GetMovesForGame(Game game);
         int RemoveGame(Game game);
         int UpdateGame(Game oldGame, Game newGame);
+        Game RetrieveGame(int gameID);
     }
 }

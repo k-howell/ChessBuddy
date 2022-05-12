@@ -9,6 +9,7 @@ namespace DataAccessInterfaces
 {
     public interface IGameAccessor
     {
+        Game SelectGame(int gameID);
         List<Game> SelectGamesByECO(string eco);
         List<Game> SelectAllGames();
         List<Move> SelectMovesByGameID(int gameID);

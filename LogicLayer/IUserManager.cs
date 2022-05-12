@@ -10,7 +10,7 @@ namespace LogicLayer
     public interface IUserManager
     {
         User LoginUser(string userName, string password);
-        bool AuthenticateUser(string userName, string passwordHash);
+        User AuthenticateUser(string userName, string passwordHash);
         string HashSha256(string source);
         User GetUserByUserName(string userName);
         List<string> GetUserRoles(string userName);
@@ -19,5 +19,6 @@ namespace LogicLayer
         bool ResetPassword(string userName, string oldPassword, string newPassword);
         int AddUserFavorite(string userName, int gameID);
         int RemoveUserFavorite(string userName, int gameID);
+        List<string> GetAllUserRoles();
     }
 }

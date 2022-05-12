@@ -198,6 +198,7 @@ INSERT INTO dbo.[Role] (
 )
 VALUES
 	('Guest'),
+	('Member'),
 	('Admin')
 GO
 
@@ -212,12 +213,13 @@ VALUES
 	('jsmith', 'Guest'),
 	('mrogers', 'Guest'),
 	('mcarrazza', 'Guest'),
-	('khowell', 'Guest'),
-	('khowell', 'Admin'),
 	('showell', 'Guest'),
-	('showell', 'Admin'),
+	('showell', 'Member'),
 	('jglasgow', 'Guest'),
-	('jglasgow', 'Admin')
+	('jglasgow', 'Member'),
+	('khowell', 'Guest'),
+	('khowell', 'Member'),
+	('khowell', 'Admin')
 GO
 
 print '' print '*** populating Piece lookup table ***'
@@ -653,6 +655,18 @@ AS
 	END
 GO
 
+print '' print '*** Creating sp_select_all_user_roles ***'
+GO
+CREATE PROCEDURE dbo.sp_select_all_user_roles
+AS
+	BEGIN
+		SELECT
+			RoleID
+		FROM
+			[Role]
+	END
+GO
+
 /*
 	--- Game ---
 	GameID				[int]
@@ -667,6 +681,29 @@ GO
 	TimeControl			[nvarchar](10)	
 	DatePlayed			[date]			
 */
+print '' print '*** Creating sp_select_game_by_GameID ***'
+GO
+CREATE PROCEDURE dbo.sp_select_game_by_GameID
+(
+	@GameID				[int]
+)
+AS
+	BEGIN
+		SELECT
+			GameID, PlayerWhite, WhiteElo, PlayerBlack, BlackElo, [Game].ECO, [Opening].Name,
+			OpeningVariation, Termination, Outcome, TimeControl, DatePlayed
+		FROM
+			[Game]
+		JOIN
+			[Opening]
+		ON
+			[Game].ECO = [Opening].ECO
+		WHERE
+			GameID = @GameID
+		ORDER BY DatePlayed DESC
+	END
+GO
+
 print '' print '*** Creating sp_select_all_games ***'
 GO
 CREATE PROCEDURE dbo.sp_select_all_games

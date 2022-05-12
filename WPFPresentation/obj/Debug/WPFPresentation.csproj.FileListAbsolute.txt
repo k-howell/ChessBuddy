@@ -1,31 +1,31 @@
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.exe.config
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.exe
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\LogicLayer.dll
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessInterfaces.dll
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessLayer.dll
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\LogicLayer.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessInterfaces.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessLayer.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.AssemblyReference.cache
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\GameView.g.cs
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\MainWindow.g.cs
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\UpdatePasswordWindow.g.cs
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\App.g.cs
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation_MarkupCompile.cache
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation_MarkupCompile.lref
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\GameView.baml
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\MainWindow.baml
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\UpdatePasswordWindow.baml
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.g.resources
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.Properties.Resources.resources
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.Resources.resources
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.GenerateResource.cache
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.CoreCompileInputs.cache
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.CopyComplete
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.exe
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataObjects.dll
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\bin\Debug\DataObjects.pdb
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\EditDeleteGame.g.cs
-C:\Users\krist\source\repos\ChessBuddy\WPFPresentation\obj\Debug\EditDeleteGame.baml
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.exe.config
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.exe
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\WPFPresentation.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\LogicLayer.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessInterfaces.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessLayer.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataObjects.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\LogicLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\bin\Debug\DataAccessLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\EditDeleteGame.g.cs
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\GameView.g.cs
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\MainWindow.g.cs
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\UpdatePasswordWindow.g.cs
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\App.g.cs
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation_MarkupCompile.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation_MarkupCompile.lref
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\EditDeleteGame.baml
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\GameView.baml
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\MainWindow.baml
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\UpdatePasswordWindow.baml
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.g.resources
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.Properties.Resources.resources
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.Resources.resources
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.GenerateResource.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.csproj.CopyComplete
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.exe
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\WPFPresentation\obj\Debug\WPFPresentation.pdb

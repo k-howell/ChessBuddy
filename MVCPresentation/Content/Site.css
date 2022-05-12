@@ -1,0 +1,119 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Game details view */
+
+#board-box {
+    width: 60%;
+    padding-bottom: 60%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.orient-white {
+    background: url("Images/board_white.png");
+    background-size: cover;
+}
+
+.orient-black {
+    background: url("Images/board_black.png");
+    background-size: cover;
+}
+
+.Pawn-White {
+    background: url("Images/pawn_white.png");
+    background-size: cover;
+}
+
+.Pawn-Black {
+    background: url("Images/pawn_black.png");
+    background-size: cover;
+}
+
+.Knight-White {
+    background: url("Images/knight_white.png");
+    background-size: cover;
+}
+
+.Knight-Black {
+    background: url("Images/knight_black.png");
+    background-size: cover;
+}
+
+.Bishop-White {
+    background: url("Images/bishop_white.png");
+    background-size: cover;
+}
+
+.Bishop-Black {
+    background: url("Images/bishop_black.png");
+    background-size: cover;
+}
+
+.Rook-White {
+    background: url("Images/rook_white.png");
+    background-size: cover;
+}
+
+.Rook-Black {
+    background: url("Images/rook_black.png");
+    background-size: cover;
+}
+
+.Queen-White {
+    background: url("Images/queen_white.png");
+    background-size: cover;
+}
+
+.Queen-Black {
+    background: url("Images/queen_black.png");
+    background-size: cover;
+}
+
+.King-White {
+    background: url("Images/king_white.png");
+    background-size: cover;
+}
+
+.King-Black {
+    background: url("Images/king_black.png");
+    background-size: cover;
+}
+
+#board {
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+}
+
+#board td {
+    width: 12.5%;
+    padding-bottom: 12.5%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+/* Custom changes to bootstrap */

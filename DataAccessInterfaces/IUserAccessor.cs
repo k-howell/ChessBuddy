@@ -17,5 +17,6 @@ namespace DataAccessInterfaces
         List<Game> SelectFavoritesByUserNameAndECO(string userName, string eco);
         int InsertUserFavoriteGame(string userName, int gameID);
         int RemoveUserFavoriteGame(string userName, int gameID);
+        List<string> SelectAllRoles();
     }
 }

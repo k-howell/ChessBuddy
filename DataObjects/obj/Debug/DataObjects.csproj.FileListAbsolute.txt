@@ -1,6 +1,11 @@
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\bin\Debug\DataObjects.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.pdb
 C:\Users\krist\source\repos\ChessBuddy\DataObjects\bin\Debug\DataObjects.dll
 C:\Users\krist\source\repos\ChessBuddy\DataObjects\bin\Debug\DataObjects.pdb
-C:\Users\krist\source\repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.csproj.AssemblyReference.cache
 C:\Users\krist\source\repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
 C:\Users\krist\source\repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.dll
 C:\Users\krist\source\repos\ChessBuddy\DataObjects\obj\Debug\DataObjects.pdb

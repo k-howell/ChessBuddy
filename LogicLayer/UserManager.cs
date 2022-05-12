@@ -40,20 +40,23 @@ namespace LogicLayer
             return user;
         }
 
-        public bool AuthenticateUser(string userName, string passwordHash)
+        public User AuthenticateUser(string userName, string password)
         {
-            bool isAuthenticated;
+            User authenticatedUser = null;
+            string passwordHash = HashSha256(password);
 
             try
             {
-                isAuthenticated = 1 == _userAccessor.AuthenticateUserWithUserNameAndPasswordHash(userName, passwordHash);
+                if(1 == _userAccessor.AuthenticateUserWithUserNameAndPasswordHash(userName, passwordHash)) {
+                    authenticatedUser = GetUserByUserName(userName);
+                }
             }
             catch (Exception)
             {
                 throw;
             }
 
-            return isAuthenticated;
+            return authenticatedUser;
         }
 
         public bool ResetPassword(string userName, string oldPassword, string newPassword)
@@ -86,6 +89,22 @@ namespace LogicLayer
             try
             {
                 roles = _userAccessor.SelectRolesByUserName(userName);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return roles;
+        }
+
+        public List<string> GetAllUserRoles()
+        {
+            List<string> roles;
+
+            try
+            {
+                roles = _userAccessor.SelectAllRoles();
             }
             catch (Exception)
             {
@@ -136,8 +155,8 @@ namespace LogicLayer
                     throw new ApplicationException("Missing password.");
                 }
 
-                password = HashSha256(password);
-                if(AuthenticateUser(userName, password))
+                // password = HashSha256(password);
+                if(AuthenticateUser(userName, password) != null)
                 {
                     loggedIn = GetUserByUserName(userName);
                     loggedIn.Roles = GetUserRoles(userName);

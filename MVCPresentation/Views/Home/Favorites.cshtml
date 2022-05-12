@@ -1,0 +1,106 @@
+﻿@model IEnumerable<DataObjects.Game>
+@{
+    ViewBag.Title = "Browse Favorite Games";
+}
+
+<div>
+    <h2>Your Favorite Games</h2>
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(0)">White Player</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(1)">Elo</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(2)">Black Player</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(3)">Elo</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(4)">ECO</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(5)">Opening</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(6)">Termination</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(7)">Outcome</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(8)">Time Control</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p onclick="sortTable(9)">Date</p>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            @foreach (DataObjects.Game game in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.PlayerWhite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.WhiteElo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.PlayerBlack)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.BlackElo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.ECO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Opening)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Termination)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Outcome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.TimeControl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.DisplayDatePlayed)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>You have not favorited any games.</p>
+    }
+</div>

@@ -8,7 +8,6 @@ namespace DataObjects
 {
     public class Game
     {
-        private string _openingName;
         /*
 			GameID				[int] IDENTITY(100000, 1)
             PlayerWhite			[nvarchar](20)			
@@ -22,14 +21,12 @@ namespace DataObjects
             TimeControl			[nvarchar](10)			
             DatePlayed			[date]							
 		*/
-        DateTime _dateTime;
 
         public int GameID { get; set; }
         public string PlayerWhite { get; set; }
         public int WhiteElo { get; set; }
         public string PlayerBlack { get; set; }
         public int BlackElo { get; set; }
-        // public Opening Opening { get; set; }
         public string ECO { get; set; }
         public string Opening { get; set; }
         public string Termination { get; set; }
@@ -37,5 +34,17 @@ namespace DataObjects
         public string TimeControl { get; set; }
         public DateTime? DatePlayed { get; set; }
         public List<Move> Moves { get; set; }
+        public string DisplayDatePlayed
+        {
+            get
+            {
+                if (DatePlayed == null)
+                {
+                    return "";
+                }
+                DateTime display = (DateTime)DatePlayed;
+                return display.ToString("d");
+            }
+        }
     }
 }

@@ -87,6 +87,65 @@ namespace DataAccessLayer
             return rowsAffected;
         }
 
+        public Game SelectGame(int gameID)
+        {
+            Game game = null;
+
+            var conn = DBConnection.GetConnection();
+            var cmdText = @"sp_select_game_by_GameID";
+
+            var cmd = new SqlCommand(cmdText, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@GameID", SqlDbType.Int);
+            cmd.Parameters["@GameID"].Value = gameID;
+
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        game = new Game()
+                        {
+                            // GameID, PlayerWhite, WhiteElo, PlayerBlack, BlackElo, ECO, [Opening].Name,
+                            // OpeningVariation, Termination, Outcome, TimeControl, DatePlayed
+                            GameID = reader.GetInt32(0),
+                            PlayerWhite = reader.GetString(1),
+                            WhiteElo = reader.IsDBNull(2) ? 0 : reader.GetInt32(2), // should be null rather than 0, but I can't, despite WhiteElo being nullable int
+                            PlayerBlack = reader.GetString(3),
+                            BlackElo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4), // same as above.  I guess 0 is fine for unrated players.
+                            //Opening = new Opening()
+                            //{
+                            //    ECO = reader.GetString(5),
+                            //    Name = reader.GetString(6),
+                            //    Variation = reader.GetString(7)
+                            //},
+                            ECO = reader.GetString(5),
+                            Opening = reader.GetString(7),
+                            Termination = reader.GetString(8),
+                            Outcome = reader.GetString(9),
+                            TimeControl = reader.GetString(10),
+                            DatePlayed = reader.GetDateTime(11)
+                        };
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return game;
+        }
+
         public List<Game> SelectAllGames()
         {
             List<Game> games = new List<Game>();
@@ -214,9 +273,9 @@ namespace DataAccessLayer
                             // OpeningVariation, Termination, Outcome, TimeControl, DatePlayed
                             GameID = reader.GetInt32(0),
                             PlayerWhite = reader.GetString(1),
-                            WhiteElo = reader.IsDBNull(2) ? 0 : reader.GetInt32(2), // should be null rather than 0, but I can't, despite WhiteElo being nullable int
+                            WhiteElo = reader.IsDBNull(2) ? 0 : reader.GetInt32(2),
                             PlayerBlack = reader.GetString(3),
-                            BlackElo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4), // same as above.  I guess 0 is fine for unrated players.
+                            BlackElo = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
                             //Opening = new Opening()
                             //{
                             //    ECO = reader.GetString(5),

@@ -22,8 +22,18 @@ namespace LogicLayer
         public BoardManager(Game game)
         {
             Board = new Board();
-            _game = game;
+            _game = game;   
             _turn = 0;
+        }
+
+        public Board GetBoard()
+        {
+            return Board;
+        }
+
+        public int GetTurn()
+        {
+            return _turn;
         }
 
         public void FlipBoard()
@@ -63,6 +73,24 @@ namespace LogicLayer
             }
 
             _turn = 0;
+        }
+
+        public int SetTurn(int turn)
+        {
+            if(_game != null)
+            {
+                while (turn > _turn && turn < _game.Moves.Count)
+                {
+                    NextGameMove();
+                }
+
+                while (turn < _turn && turn >= 0)
+                {
+                    PrevGameMove();
+                }
+            }
+
+            return _turn;
         }
 
         public void MakeMove(string origin, string destination)

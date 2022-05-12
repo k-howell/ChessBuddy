@@ -1,9 +1,18 @@
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataAccessInterfaces.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.CopyComplete
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.pdb
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataAccessInterfaces.dll
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.pdb
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.AssemblyReference.cache
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.CoreCompileInputs.cache
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.csproj.CopyComplete
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.dll
 C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\obj\Debug\DataAccessInterfaces.pdb
-C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.dll
-C:\Users\krist\source\repos\ChessBuddy\DataAccessInterfaces\bin\Debug\DataObjects.pdb

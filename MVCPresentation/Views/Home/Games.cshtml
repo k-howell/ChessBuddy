@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DataObjects.Game>
+@{
+    ViewBag.Title = "Browse Games";
+}
+
+
+<div>
+    <h2 class="mb-5">Browse Games</h2>
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <div>
+                            <p>White Player</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Elo</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Black Player</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Elo</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>ECO</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Opening</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Termination</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Outcome</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Time Control</p>
+                        </div>
+                    </th>
+                    <th>
+                        <div>
+                            <p>Date</p>
+                        </div>
+                    </th>
+                    <th/>
+                </tr>
+            </thead>
+            @foreach (DataObjects.Game game in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.PlayerWhite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.WhiteElo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.PlayerBlack)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.BlackElo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.ECO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Opening)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Termination)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.Outcome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.TimeControl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => game.DisplayDatePlayed)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "Game", new { gameID = game.GameID }, new { @class="btn btn-primary" })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>No games found.</p>
+    }
+</div>

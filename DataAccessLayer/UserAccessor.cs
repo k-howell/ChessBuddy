@@ -124,10 +124,6 @@ namespace DataAccessLayer
                         };
                     }
                 }
-                else
-                {
-                    throw new ApplicationException("User not found.");
-                }
             }
             catch (Exception)
             {
@@ -375,6 +371,50 @@ namespace DataAccessLayer
             }
 
             return games;
+        }
+
+        public List<string> SelectAllRoles()
+        {
+            List<string> roles = new List<string>();
+
+            // get a connection
+            var conn = DBConnection.GetConnection();
+
+            // command text
+            string cmdText = @"sp_select_all_user_roles";
+
+            // command objects
+            var cmd = new SqlCommand(cmdText, conn);
+
+            // set the command type
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                // open the connection
+                conn.Open();
+
+                // process cmd
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string role = reader.GetString(0);
+                        roles.Add(role);
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return roles;
         }
     }
 }

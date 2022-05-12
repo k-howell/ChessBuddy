@@ -1,13 +1,26 @@
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.pdb
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.AssemblyReference.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\krist\source\repos\ChessBuddy repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.pdb
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\LogicLayer.dll
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\LogicLayer.pdb
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessInterfaces.dll
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.dll
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.pdb
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.AssemblyReference.cache
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.dll
 C:\Users\krist\source\repos\ChessBuddy\LogicLayer\obj\Debug\LogicLayer.pdb
-C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.dll
-C:\Users\krist\source\repos\ChessBuddy\LogicLayer\bin\Debug\DataObjects.pdb

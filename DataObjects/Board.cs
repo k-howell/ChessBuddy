@@ -229,7 +229,7 @@ namespace DataObjects
         {
             Piece piece = null;
 
-            piece = this.First<Piece>((p) => p.Position == _position[squareName]);
+            piece = this.FirstOrDefault<Piece>((p) => p.Position == _position[squareName]);
 
             return piece;
         }

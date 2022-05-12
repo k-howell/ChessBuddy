@@ -23,6 +23,22 @@ namespace LogicLayer
             _gameAccessor = gameAccessor;
         }
 
+        public Game RetrieveGame(int gameID)
+        {
+            Game game;
+
+            try
+            {
+                game = _gameAccessor.SelectGame(gameID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return game;
+        }
+
         public List<Game> RetrieveAllGames()
         {
             List<Game> games;
