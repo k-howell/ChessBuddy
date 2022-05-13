@@ -359,7 +359,7 @@ namespace DataAccessLayer
                             Notation = reader.GetString(4),
                             Origin = reader.GetString(5),
                             Destination = reader.GetString(6),
-                            Capture = reader.IsDBNull(7) ? PieceType.None : // I despise this solution, but can't set to null despite Capture being nullable PieceType?
+                            Capture = reader.IsDBNull(7) ? PieceType.None :
                                         reader.GetString(7) == "Pawn" ? PieceType.Pawn :
                                         reader.GetString(7) == "Knight" ? PieceType.Knight :
                                         reader.GetString(7) == "Bishop" ? PieceType.Bishop :

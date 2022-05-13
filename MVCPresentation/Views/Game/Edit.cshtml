@@ -1,0 +1,68 @@
+﻿@model DataObjects.Game
+@{
+    ViewBag.Title = "Edit Game";
+}
+
+<div>
+    <h2>Edit Game</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.GameID)
+        <div class="mb-2">
+            <label class="form-label">Player White:</label>
+            @Html.TextBoxFor(model => model.PlayerWhite, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.PlayerWhite, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">White Elo:</label>
+            @Html.TextBoxFor(model => model.WhiteElo, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.WhiteElo, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Player Black:</label>
+            @Html.TextBoxFor(model => model.PlayerBlack, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.PlayerBlack, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Black Elo:</label>
+            @Html.TextBoxFor(model => model.BlackElo, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.BlackElo, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">ECO:</label>
+            @Html.TextBoxFor(model => model.ECO, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.ECO, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Opening:</label>
+            @Html.TextBoxFor(model => model.Opening, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.Opening, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Termination:</label>
+            @Html.TextBoxFor(model => model.Termination, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.Termination, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Outcome:</label>
+            @Html.TextBoxFor(model => model.Outcome, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.Outcome, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Time Control:</label>
+            @Html.TextBoxFor(model => model.TimeControl, new { @class = "form-control ms-2" })
+            @Html.ValidationMessageFor(model => model.TimeControl, "", new { @class = "text-danger" })
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Date Played:</label>
+            @Html.TextBoxFor(model => model.DatePlayed, new { @class = "form-control ms-2", type = "date" })
+            @*@Html.EditorFor(model => model.DatePlayed)*@
+            @Html.ValidationMessageFor(model => model.DatePlayed, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mt-3">
+            <input type="submit" class="btn btn-primary me-3" value="Save" />
+            @Html.ActionLink("Cancel", "Games", "Home", null, new { onclick = "return confirm('This will discard any changes you have made. Continue?');", @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

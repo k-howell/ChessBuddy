@@ -11,13 +11,14 @@ namespace LogicLayer
     {
         Board GetBoard();
         void LoadGame(Game game);
+        void LoadBoard(Board board);
         void FlipBoard();
         void ResetBoard();
         int GetTurn();
         int SetTurn(int turn);
         void MakeMove(string origin, string destination);
         void MakeMove(Piece piece, string destination);
-        void NextGameMove();
-        void PrevGameMove();
+        int NextGameMove();
+        int PrevGameMove();
     }
 }

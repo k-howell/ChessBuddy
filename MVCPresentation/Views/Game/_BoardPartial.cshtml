@@ -1,0 +1,137 @@
+﻿@model MVCPresentation.Models.GameBoardViewModel
+@using DataObjects
+@{
+    //int gameID = ViewBag.GameID;
+    //int turn = ViewBag.Turn;
+    //string side = ViewBag.Side;
+    if (Model.Side != "Black")
+    {
+        // default to white if not black
+        Model.Side = "White";
+    }
+
+    // place pieces
+    Dictionary<string, string> pieces = new Dictionary<string, string>();
+    if (Model.Side == "Black")
+    {
+        for (char f = 'a'; f <= 'h'; f++)
+        {
+            for (int r = 1; r <= 8; r++)
+            {
+                // adjust rank and file to mirror on board
+                Piece piece = Model.Board.pieceAt("" + (char)(201 - f) + (9 - r));
+
+                if (piece != null)
+                {
+                    pieces.Add("" + f + r, piece.Type + "-" + @piece.Color);
+                }
+                else
+                {
+                    pieces.Add("" + f + r, "empty");
+                }
+            }
+        }
+    }
+    else
+    {
+        for (char f = 'a'; f <= 'h'; f++)
+        {
+            for (int r = 1; r <= 8; r++)
+            {
+                Piece piece = Model.Board.pieceAt("" + f + r);
+
+                if (piece != null)
+                {
+                    pieces.Add("" + f + r, piece.Type + "-" + @piece.Color);
+                }
+                else
+                {
+                    pieces.Add("" + f + r, "empty");
+                }
+            }
+        }
+    }
+}
+
+<table id="board" class="orient-@Model.Side">
+    <tr rank="8">
+        <td file="a" class="@pieces["a8"]"></td>
+        <td file="b" class="@pieces["b8"]"></td>
+        <td file="c" class="@pieces["c8"]"></td>
+        <td file="d" class="@pieces["d8"]"></td>
+        <td file="e" class="@pieces["e8"]"></td>
+        <td file="f" class="@pieces["f8"]"></td>
+        <td file="g" class="@pieces["g8"]"></td>
+        <td file="h" class="@pieces["h8"]"></td>
+    </tr>
+    <tr rank="7">
+        <td file="a" class="@pieces["a7"]"></td>
+        <td file="b" class="@pieces["b7"]"></td>
+        <td file="c" class="@pieces["c7"]"></td>
+        <td file="d" class="@pieces["d7"]"></td>
+        <td file="e" class="@pieces["e7"]"></td>
+        <td file="f" class="@pieces["f7"]"></td>
+        <td file="g" class="@pieces["g7"]"></td>
+        <td file="h" class="@pieces["h7"]"></td>
+    </tr>
+    <tr rank="6">
+        <td file="a" class="@pieces["a6"]"></td>
+        <td file="b" class="@pieces["b6"]"></td>
+        <td file="c" class="@pieces["c6"]"></td>
+        <td file="d" class="@pieces["d6"]"></td>
+        <td file="e" class="@pieces["e6"]"></td>
+        <td file="f" class="@pieces["f6"]"></td>
+        <td file="g" class="@pieces["g6"]"></td>
+        <td file="h" class="@pieces["h6"]"></td>
+    </tr>
+    <tr rank="5">
+        <td file="a" class="@pieces["a5"]"></td>
+        <td file="b" class="@pieces["b5"]"></td>
+        <td file="c" class="@pieces["c5"]"></td>
+        <td file="d" class="@pieces["d5"]"></td>
+        <td file="e" class="@pieces["e5"]"></td>
+        <td file="f" class="@pieces["f5"]"></td>
+        <td file="g" class="@pieces["g5"]"></td>
+        <td file="h" class="@pieces["h5"]"></td>
+    </tr>
+    <tr rank="4">
+        <td file="a" class="@pieces["a4"]"></td>
+        <td file="b" class="@pieces["b4"]"></td>
+        <td file="c" class="@pieces["c4"]"></td>
+        <td file="d" class="@pieces["d4"]"></td>
+        <td file="e" class="@pieces["e4"]"></td>
+        <td file="f" class="@pieces["f4"]"></td>
+        <td file="g" class="@pieces["g4"]"></td>
+        <td file="h" class="@pieces["h4"]"></td>
+    </tr>
+    <tr rank="3">
+        <td file="a" class="@pieces["a3"]"></td>
+        <td file="b" class="@pieces["b3"]"></td>
+        <td file="c" class="@pieces["c3"]"></td>
+        <td file="d" class="@pieces["d3"]"></td>
+        <td file="e" class="@pieces["e3"]"></td>
+        <td file="f" class="@pieces["f3"]"></td>
+        <td file="g" class="@pieces["g3"]"></td>
+        <td file="h" class="@pieces["h3"]"></td>
+    </tr>
+    <tr rank="2">
+        <td file="a" class="@pieces["a2"]"></td>
+        <td file="b" class="@pieces["b2"]"></td>
+        <td file="c" class="@pieces["c2"]"></td>
+        <td file="d" class="@pieces["d2"]"></td>
+        <td file="e" class="@pieces["e2"]"></td>
+        <td file="f" class="@pieces["f2"]"></td>
+        <td file="g" class="@pieces["g2"]"></td>
+        <td file="h" class="@pieces["h2"]"></td>
+    </tr>
+    <tr rank="1">
+        <td file="a" class="@pieces["a1"]"></td>
+        <td file="b" class="@pieces["b1"]"></td>
+        <td file="c" class="@pieces["c1"]"></td>
+        <td file="d" class="@pieces["d1"]"></td>
+        <td file="e" class="@pieces["e1"]"></td>
+        <td file="f" class="@pieces["f1"]"></td>
+        <td file="g" class="@pieces["g1"]"></td>
+        <td file="h" class="@pieces["h1"]"></td>
+    </tr>
+</table>

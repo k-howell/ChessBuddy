@@ -25,21 +25,43 @@ textarea {
 
 /* Game details view */
 
-#board-box {
-    width: 60%;
-    padding-bottom: 60%;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.orient-white {
+.orient-White {
     background: url("Images/board_white.png");
     background-size: cover;
 }
 
-.orient-black {
+.orient-Black {
     background: url("Images/board_black.png");
     background-size: cover;
+}
+
+.col-20 {
+    width: 20%;
+    float: left;
+}
+
+.col-60 {
+    width: 60%;
+    float: left;
+}
+
+#board-bottom {
+    width: 100%;
+    float: right;
+}
+
+#board {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+
+#board td {
+    width: 12.5%;
+    padding-bottom: 12.5%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
 }
 
 .Pawn-White {
@@ -100,20 +122,6 @@ textarea {
 .King-Black {
     background: url("Images/king_black.png");
     background-size: cover;
-}
-
-#board {
-    border-collapse: collapse;
-    width: 60%;
-    margin: auto;
-}
-
-#board td {
-    width: 12.5%;
-    padding-bottom: 12.5%;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
 }
 
 /* Custom changes to bootstrap */

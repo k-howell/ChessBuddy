@@ -109,9 +109,9 @@ print '' print '*** Creating Game table ***'
 GO
 CREATE TABLE dbo.[Game] (
 	GameID				[int] IDENTITY(100000, 1)	NOT NULL,
-	PlayerWhite			[nvarchar](20)				NOT NULL DEFAULT 'Player1',
+	PlayerWhite			[nvarchar](30)				NOT NULL DEFAULT 'Player1',
 	WhiteElo			[int]						NULL,
-	PlayerBlack			[nvarchar](20)				NOT NULL DEFAULT 'Player2',
+	PlayerBlack			[nvarchar](30)				NOT NULL DEFAULT 'Player2',
 	BlackElo			[int]						NULL,
 	ECO					[nchar](3)					NULL,
 	OpeningVariation	[nvarchar](50)				NULL,

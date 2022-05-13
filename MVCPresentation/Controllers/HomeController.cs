@@ -12,8 +12,8 @@ namespace MVCPresentation.Controllers
 {
     public class HomeController : Controller
     {
-        IGameManager gameManager = new GameManager();
-        IUserManager userManager = new LogicLayer.UserManager();
+        IGameManager _gameManager = new GameManager();
+        IUserManager _userManager = new LogicLayer.UserManager();
 
         public ActionResult Index()
         {
@@ -37,7 +37,7 @@ namespace MVCPresentation.Controllers
         public ActionResult Games()
         {
             ViewBag.Message = "Your page to browse chess games.";
-            IEnumerable<Game> model = gameManager.RetrieveAllGames();
+            IEnumerable<Game> model = _gameManager.RetrieveAllGames();
 
 
             return View(model);
@@ -47,9 +47,24 @@ namespace MVCPresentation.Controllers
         public ActionResult Favorites()
         {
             ViewBag.Message = "Your page to browse your favorited chess games.";
-            IEnumerable<Game> model = userManager.GetUserFavorites(User.Identity.GetUserName());
+            IEnumerable<Game> model = _userManager.GetUserFavorites(User.Identity.GetUserName());
 
             return View(model);
+        }
+
+        [Authorize]
+        public ActionResult RemoveFavorite(int gameID)
+        {
+            try
+            {
+                _userManager.RemoveUserFavorite(User.Identity.Name, gameID);
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMsg"] = ex.Message;
+            }
+
+            return RedirectToAction("Favorites", "Home");
         }
     }
 }

@@ -1,35 +1,13 @@
-﻿@model LogicLayer.IBoardManager
-@using LogicLayer
+﻿@model MVCPresentation.Models.GameBoardViewModel
 @using DataObjects
-@{
-    int gameID = ViewBag.GameID;
-    int turn = ViewBag.Turn;
-    Dictionary<string, string> pieces = new Dictionary<string, string>();
-    for (char f = 'a'; f <= 'h'; f++)
-    {
-        for (int r = 1; r <= 8; r++)
-        {
-            Piece piece = Model.GetBoard().pieceAt("" + f + r);
-
-            if (piece != null)
-            {
-                pieces.Add("" + f + r, piece.Type + "-" + @piece.Color);
-            }
-            else
-            {
-                pieces.Add("" + f + r, "empty");
-            }
-        }
-    }
-}
-@*<script>
-    function updateBoard() {
+<script>
+    @*function updateBoard() {
         // update tile classes
         @for(char f = 'a'; f <= 'h'; f++)
         {
             for(int r = 1; r <= 8; r++)
             {
-                Piece piece = Model.GetBoard().pieceAt("" + f + r);
+                Piece piece = Model.Board.pieceAt("" + f + r);
                 if(piece != null)
                 {
                     <text>
@@ -38,96 +16,160 @@
                 }
             }
         }
+    }*@
+    var turn = 0;
+    var side = "White";
+
+    function nextMove() {
+        $.ajax({
+            url: '@Url.Action("SetTurn", "Game")',
+            data: { gameID: @Model.Game.GameID, turn: turn + 1, side: side },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    // alert("Success!!");
+                    $('#board-container').html(result);
+                    if (turn < @Model.Game.Moves.Count) {
+                        turn++;
+                    }
+                }
+            }
+        });
     }
-</script>*@
-<table id="board" class="orient-white">
-    <tr rank="8">
-        <td file="a" class="@pieces["a8"]"></td>
-        <td file="b" class="@pieces["b8"]"></td>
-        <td file="c" class="@pieces["c8"]"></td>
-        <td file="d" class="@pieces["d8"]"></td>
-        <td file="e" class="@pieces["e8"]"></td>
-        <td file="f" class="@pieces["f8"]"></td>
-        <td file="g" class="@pieces["g8"]"></td>
-        <td file="h" class="@pieces["h8"]"></td>
-    </tr>
-    <tr rank="7">
-        <td file="a" class="@pieces["a7"]"></td>
-        <td file="b" class="@pieces["b7"]"></td>
-        <td file="c" class="@pieces["c7"]"></td>
-        <td file="d" class="@pieces["d7"]"></td>
-        <td file="e" class="@pieces["e7"]"></td>
-        <td file="f" class="@pieces["f7"]"></td>
-        <td file="g" class="@pieces["g7"]"></td>
-        <td file="h" class="@pieces["h7"]"></td>
-    </tr>
-    <tr rank="6">
-        <td file="a" class="@pieces["a6"]"></td>
-        <td file="b" class="@pieces["b6"]"></td>
-        <td file="c" class="@pieces["c6"]"></td>
-        <td file="d" class="@pieces["d6"]"></td>
-        <td file="e" class="@pieces["e6"]"></td>
-        <td file="f" class="@pieces["f6"]"></td>
-        <td file="g" class="@pieces["g6"]"></td>
-        <td file="h" class="@pieces["h6"]"></td>
-    </tr>
-    <tr rank="5">
-        <td file="a" class="@pieces["a5"]"></td>
-        <td file="b" class="@pieces["b5"]"></td>
-        <td file="c" class="@pieces["c5"]"></td>
-        <td file="d" class="@pieces["d5"]"></td>
-        <td file="e" class="@pieces["e5"]"></td>
-        <td file="f" class="@pieces["f5"]"></td>
-        <td file="g" class="@pieces["g5"]"></td>
-        <td file="h" class="@pieces["h5"]"></td>
-    </tr>
-    <tr rank="4">
-        <td file="a" class="@pieces["a4"]"></td>
-        <td file="b" class="@pieces["b4"]"></td>
-        <td file="c" class="@pieces["c4"]"></td>
-        <td file="d" class="@pieces["d4"]"></td>
-        <td file="e" class="@pieces["e4"]"></td>
-        <td file="f" class="@pieces["f4"]"></td>
-        <td file="g" class="@pieces["g4"]"></td>
-        <td file="h" class="@pieces["h4"]"></td>
-    </tr>
-    <tr rank="3">
-        <td file="a" class="@pieces["a3"]"></td>
-        <td file="b" class="@pieces["b3"]"></td>
-        <td file="c" class="@pieces["c3"]"></td>
-        <td file="d" class="@pieces["d3"]"></td>
-        <td file="e" class="@pieces["e3"]"></td>
-        <td file="f" class="@pieces["f3"]"></td>
-        <td file="g" class="@pieces["g3"]"></td>
-        <td file="h" class="@pieces["h3"]"></td>
-    </tr>
-    <tr rank="2">
-        <td file="a" class="@pieces["a2"]"></td>
-        <td file="b" class="@pieces["b2"]"></td>
-        <td file="c" class="@pieces["c2"]"></td>
-        <td file="d" class="@pieces["d2"]"></td>
-        <td file="e" class="@pieces["e2"]"></td>
-        <td file="f" class="@pieces["f2"]"></td>
-        <td file="g" class="@pieces["g2"]"></td>
-        <td file="h" class="@pieces["h2"]"></td>
-    </tr>
-    <tr rank="1">
-        <td file="a" class="@pieces["a1"]"></td>
-        <td file="b" class="@pieces["b1"]"></td>
-        <td file="c" class="@pieces["c1"]"></td>
-        <td file="d" class="@pieces["d1"]"></td>
-        <td file="e" class="@pieces["e1"]"></td>
-        <td file="f" class="@pieces["f1"]"></td>
-        <td file="g" class="@pieces["g1"]"></td>
-        <td file="h" class="@pieces["h1"]"></td>
-    </tr>
-</table>
-@if (@turn != 0)
-{
-    @Html.ActionLink("Prev Turn", "Details", new { gameID = @gameID, turn = @turn - 1 }, new { @class = "btn btn-primary" })
-}
-else
-{
-    @Html.ActionLink("Prev Turn", "Details", new { gameID = @gameID, turn = @turn }, new { @class = "btn btn-primary" })
-}
-@Html.ActionLink("Next Turn", "Details", new { gameID = @gameID, turn = @turn + 1 }, new { @class = "btn btn-primary" })
+
+    function prevMove() {
+        $.ajax({
+            url: '@Url.Action("SetTurn", "Game")',
+            data: { gameID: @Model.Game.GameID, turn: turn - 1, side: side },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    // alert("Success!!");
+                    $('#board-container').html(result);
+                    if (turn > 0) {
+                        turn--;
+                    }
+                }
+            }
+        });
+    }
+
+    function reset() {
+        $.ajax({
+            url: '@Url.Action("SetTurn", "Game")',
+            data: { gameID: @Model.Game.GameID, turn: 0, side: side },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    // alert("Reset");
+                    $('#board-container').html(result);
+                    turn = 0;
+                }
+            }
+        });
+    }
+
+    function flip() {
+        if (side == "White") {
+            side = "Black";
+        }
+        else {
+            side = "White";
+        }
+
+        $.ajax({
+            url: '@Url.Action("SetTurn", "Game")',
+            data: { gameID: @Model.Game.GameID, turn: turn, side: side },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    // alert("Success!!");
+                    $('#board-container').html(result);
+                }
+            }
+        });
+    }
+
+    function addFavorite() {
+        $.ajax({
+            url: '@Url.Action("AddFavorite", "Game")',
+            data: { gameID: @Model.Game.GameID },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    alert("Added to favorites");
+                    $('#btnFavorite').html('Remove from Favorites');
+                    $('#btnFavorite').attr('onclick', 'removeFavorite()');
+                }
+            }
+        });
+    }
+
+    function removeFavorite() {
+        $.ajax({
+            url: '@Url.Action("RemoveFavorite", "Game")',
+            data: { gameID: @Model.Game.GameID },
+            type: 'POST',
+            success: function (result) {
+                if (result) {
+                    alert("Removed from favorites");
+                    $('#btnFavorite').html('Add to Favorites');
+                    $('#btnFavorite').attr('onclick', 'addFavorite()');
+                }
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        reset();
+    });
+</script>
+<div class="row">
+    <div class="col-2 d-none d-md-block pt-5">
+        <h5 class="text-center">White:</h5>
+        <h4 class="text-center">@Model.Game.PlayerWhite</h4>
+        <p class="text-center">Elo: @Model.Game.WhiteElo</p>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xl-7 m-auto">
+        <div id="board-container">
+
+        </div>
+        <div>
+            <div class="row mt-2">
+                <a class="btn btn-primary w-25 me-5 ms-auto" onclick="prevMove()">Prev Move</a>
+                <a class="btn btn-primary w-25 ms-5 me-auto" onclick="nextMove()">Next Move</a>
+            </div>
+            <div class="row my-1">
+                <a class="btn btn-primary w-100 my-1 mx-auto" onclick="flip()">Flip</a>
+                <a class="btn btn-primary w-100 my-1 mx-auto" onclick="reset()">Reset</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="btn btn-primary w-100 my-1 mx-auto" onclick="addFavorite()">Add to Favorites</a>
+                }
+            </div>
+        </div>
+        @*@Html.Partial("_BoardPartial", Model)*@
+    </div>
+    <div class="col-2 d-none d-md-block pt-5">
+        <h5 class="text-center">Black:</h5>
+        <h4 class="text-center">@Model.Game.PlayerBlack</h4>
+        <p class="text-center">Elo: @Model.Game.BlackElo</p>
+    </div>
+</div>
+<div class="row d-md-none">
+    <div class="col-6">
+        <h5 class="text-center">White:</h5>
+        <h4 class="text-center">@Model.Game.PlayerWhite</h4>
+        <p class="text-center">Elo: @Model.Game.WhiteElo</p>
+    </div>
+    <div class="col-6">
+        <h5 class="text-center">Black:</h5>
+        <h4 class="text-center">@Model.Game.PlayerBlack</h4>
+        <p class="text-center">Elo: @Model.Game.BlackElo</p>
+    </div>
+</div>
+<div class="row">
+    <h4 class="text-center">Opening:</h4>
+    <p class="text-center">@Model.Game.Opening</p>
+    <p class="text-center">Played on @Model.Game.DisplayDatePlayed</p>
+</div>

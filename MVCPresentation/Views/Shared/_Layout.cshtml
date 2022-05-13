@@ -3,36 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Kirkwood CSD .NET III Final Project</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 @Html.ActionLink("ChessBuddy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", null, new { @class="nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Games", "Games", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Favorites", "Favorites", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class="nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Games", "Games", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Favorites", "Favorites", "Home", null, new { @class = "nav-link" })</li>
+                    @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content mt-4">
+        @if (TempData["errorMessage"] != null)
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong class="text-white">Oh, no! There was an error.</strong>
+                <p class="text-white">@TempData["errorMessage"]</p>
+            </div>
+        }
         @RenderBody()
-        <footer class="fixed-bottom">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <footer class="text-center p-4">
+        &copy; @DateTime.Now.Year - Kirkwood CSD .NET III Final Project
+    </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

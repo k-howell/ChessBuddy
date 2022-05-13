@@ -26,6 +26,13 @@ namespace LogicLayer
             _turn = 0;
         }
 
+        public BoardManager(Game game, Board board, int turn)
+        {
+            _game = game;
+            Board = board;
+            _turn = turn;
+        }
+
         public Board GetBoard()
         {
             return Board;
@@ -79,7 +86,17 @@ namespace LogicLayer
         {
             if(_game != null)
             {
-                while (turn > _turn && turn < _game.Moves.Count)
+                // force turn into bounds
+                if (turn < 0)
+                {
+                    turn = 0;
+                }
+                if (turn > _game.Moves.Count)
+                {
+                    turn = _game.Moves.Count;
+                }
+
+                while (turn > _turn && turn <= _game.Moves.Count)
                 {
                     NextGameMove();
                 }
@@ -121,7 +138,12 @@ namespace LogicLayer
             _game = game;
         }
 
-        public void NextGameMove()
+        public void LoadBoard(Board board)
+        {
+            Board = board;
+        }
+
+        public int NextGameMove()
         {
             if (_game != null && _game.Moves.Count >= _turn + 1)
             {
@@ -162,9 +184,11 @@ namespace LogicLayer
                 // FlipBoard();
                 _turn++;
             }
+
+            return _turn;
         }
 
-        public void PrevGameMove()
+        public int PrevGameMove()
         {
             if (_game != null && _turn >= 1)
             {
@@ -224,6 +248,8 @@ namespace LogicLayer
                 // FlipBoard();
                 // FlipBoard();
             }
+
+            return _turn;
         }
 
         private DataObjects.Color getTurnPlayer()

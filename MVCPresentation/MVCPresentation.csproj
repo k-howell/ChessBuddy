@@ -181,6 +181,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GameBoardViewModel.cs" />
     <Compile Include="Models\GameListViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -205,6 +206,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Views\Game\_BoardPartial.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
     <Resource Include="Content\Images\bishop_black.png" />
     <Resource Include="Content\Images\bishop_white.png" />
     <Resource Include="Content\Images\board.png" />
@@ -299,7 +303,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Games.cshtml" />
     <Content Include="Views\Home\Favorites.cshtml" />
-    <Content Include="Views\Game\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
